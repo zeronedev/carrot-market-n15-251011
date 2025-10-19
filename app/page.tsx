@@ -1,35 +1,27 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="bg-gray-100 h-screen flex items-center justify-center p-5 dark:bg-gray-700">
-      <div className="bg-white shadow-lg w-full p-5 rounded-3xl max-w-screen-sm dark:bg-gray-600">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-gray-600 font-semibold -mb-1 dark:text-gray-300">
-              In transit
-            </span>
-            <span className="text-4xl font-semibold dark:text-white">
-              Coolblue
-            </span>
-          </div>
-          <div className="size-12 bg-orange-400 rounded-full" />
-        </div>
-        <div className="my-2 flex items-center gap-2">
-          <span className="bg-green-400 text-white uppercase px-2.5 py-1.5 text-xs font-medium rounded-full transition hover:bg-green-500 hover:scale-125">
-            Today
-          </span>
-          <span className="dark:text-gray-100">9:30-10:30</span>
-        </div>
-        <div className="relative">
-          <div className="bg-gray-200 absolute rounded-full w-full h-2" />
-          <div className="bg-green-400 absolute rounded-full w-2/3 h-2" />
-        </div>
-        <div className="mt-5 flex justify-between text-gray-600 dark:text-gray-300 ">
-          <span>Expected</span>
-          <span>Sorting center</span>
-          <span>In transit</span>
-          <span className="text-gray-400 dark:text-gray-500">Delivered</span>
+    <div className="flex min-h-screen flex-col items-center justify-between p-6">
+      <div className="my-auto flex flex-col items-center gap-2 *:font-medium">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl">당근</h1>
+        <h2 className="text-2xl">당근 마켓에 어서오세요!</h2>
+      </div>
+      <div className="flex w-full flex-col items-center gap-3">
+        <Link
+          href="/create-account"
+          className="w-full rounded-md bg-orange-500 py-2.5 text-center text-lg font-medium text-white transition-colors hover:bg-orange-400"
+        >
+          시작하기
+        </Link>
+        <div className="flex gap-2">
+          <span>이미 계정이 있나요?</span>
+          <Link href="/login" className="hover:underline">
+            로그인
+          </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
